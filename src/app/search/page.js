@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import { MdStar, MdLocationOn, MdAccessTime } from 'react-icons/md'
 
-export default function SearchPage() {
+function SearchResults() {
   const searchParams = useSearchParams()
   const query = searchParams.get('q') || ''
   const [results, setResults] = useState([])
@@ -73,12 +73,10 @@ export default function SearchPage() {
   }
 
   return (
-    <>
-      <Navbar />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-2xl font-bold mb-6 text-gray-800">
-          {query ? `Search results for "${query}"` : 'Search'}
-        </h1>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <h1 className="text-2xl font-bold mb-6 text-gray-800">
+        {query ? `Search results for "${query}"` : 'Search'}
+      </h1>
 
         {isLoading ? (
           <div className="text-center py-12">
@@ -149,8 +147,28 @@ export default function SearchPage() {
             ))}
           </div>
         )}
-      </div>
+    </div>
+  )
+}
+
+export default function SearchPage() {
+  return (
+    <>
+      <Navbar />
+      <Suspense fallback={
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading search...</p>
+          </div>
+        </div>
+      }>
+        <SearchResults />
+      </Suspense>
     </>
   )
 }
+
+// Force dynamic rendering for search page
+export const dynamic = 'force-dynamic'
 

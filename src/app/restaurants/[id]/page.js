@@ -15,6 +15,9 @@ const deals = [
   { id: 3, discount: "FREE DELIVERY", code: "USE FREEDEL" }
 ]
 
+// Force dynamic rendering for restaurant pages
+export const dynamic = 'force-dynamic'
+
 export default function RestaurantPage() {
   const params = useParams()
   const router = useRouter()
