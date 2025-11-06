@@ -99,7 +99,7 @@ export default function HelpPage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Email Us</h3>
               <p className="text-gray-600 mb-4">support@swiggy.com</p>
-              <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+              <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -117,7 +117,7 @@ export default function HelpPage() {
             <div className="space-y-4">
               {filteredFaqs.length === 0 ? (
                 <div className="text-center py-12 bg-white rounded-lg">
-                  <p className="text-gray-500">No results found for "{searchQuery}"</p>
+                  <p className="text-gray-500">No results found for &quot;{searchQuery}&quot;</p>
                 </div>
               ) : (
                 filteredFaqs.map((faq) => (

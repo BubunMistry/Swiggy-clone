@@ -87,7 +87,7 @@ export default function SearchPage() {
           </div>
         ) : results.length === 0 && query ? (
           <div className="text-center py-12">
-            <p className="text-gray-600 text-lg">No results found for "{query}"</p>
+            <p className="text-gray-600 text-lg">No results found for &quot;{query}&quot;</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
