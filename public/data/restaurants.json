@@ -1,0 +1,1602 @@
+[
+  {
+    "id": 1,
+    "name": "Burger King",
+    "rating": "4.5",
+    "deliveryTime": "30 mins",
+    "address": "123 Main St, City",
+    "image": "/assets/restaurants/burgerking.jpg",
+    "menuItems": [
+      {
+        "id": 101,
+        "name": "Whopper",
+        "price": 250,
+        "image": "/assets/menu/item1.jpg",
+        "addOns": [
+          {
+            "id": 1011,
+            "name": "Extra Cheese",
+            "price": 20
+          },
+          {
+            "id": 1012,
+            "name": "Bacon",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "name": "Chicken Fries",
+        "price": 120,
+        "image": "/assets/menu/item2.jpg",
+        "addOns": [
+          {
+            "id": 1021,
+            "name": "Dipping Sauce",
+            "price": 10
+          },
+          {
+            "id": 1022,
+            "name": "Extra Fries",
+            "price": 40
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "name": "Veg Burger",
+        "price": 180,
+        "image": "/assets/menu/item3.jpg",
+        "addOns": [
+          {
+            "id": 1031,
+            "name": "Extra Patty",
+            "price": 50
+          },
+          {
+            "id": 1032,
+            "name": "Cheese Slice",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "name": "Fries",
+        "price": 90,
+        "image": "/assets/menu/item4.jpg",
+        "addOns": [
+          {
+            "id": 1041,
+            "name": "Cheese Sauce",
+            "price": 20
+          },
+          {
+            "id": 1042,
+            "name": "Garlic Mayo",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 105,
+        "name": "Coke",
+        "price": 60,
+        "image": "/assets/menu/item5.jpg",
+        "addOns": [
+          {
+            "id": 1051,
+            "name": "Large Size",
+            "price": 20
+          },
+          {
+            "id": 1052,
+            "name": "Ice Cream Float",
+            "price": 30
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dominos",
+    "rating": "4.0",
+    "deliveryTime": "25 mins",
+    "address": "456 Elm St, City",
+    "image": "/assets/restaurants/dominos.jpg",
+    "menuItems": [
+      {
+        "id": 201,
+        "name": "Pepperoni Pizza",
+        "price": 350,
+        "image": "/assets/menu/bimal snacks.jpg",
+        "addOns": [
+          {
+            "id": 2011,
+            "name": "Extra Cheese",
+            "price": 50
+          },
+          {
+            "id": 2012,
+            "name": "Mushrooms",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "id": 202,
+        "name": "Garlic Bread",
+        "price": 150,
+        "image": "/assets/menu/biryani corner.jpg",
+        "addOns": [
+          {
+            "id": 2021,
+            "name": "Cheese Dip",
+            "price": 20
+          },
+          {
+            "id": 2022,
+            "name": "Extra Garlic Butter",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 203,
+        "name": "Cheese Burst Pizza",
+        "price": 400,
+        "image": "/assets/menu/Breakfast corner.jpg",
+        "addOns": [
+          {
+            "id": 2031,
+            "name": "Extra Toppings",
+            "price": 60
+          },
+          {
+            "id": 2032,
+            "name": "Stuffed Crust",
+            "price": 80
+          }
+        ]
+      },
+      {
+        "id": 204,
+        "name": "Pasta Italiano",
+        "price": 250,
+        "image": "/assets/menu/burger queen.jpg",
+        "addOns": [
+          {
+            "id": 2041,
+            "name": "Extra Sauce",
+            "price": 30
+          },
+          {
+            "id": 2042,
+            "name": "Garlic Bread",
+            "price": 50
+          }
+        ]
+      },
+      {
+        "id": 205,
+        "name": "Choco Lava Cake",
+        "price": 120,
+        "image": "/assets/menu/chaoman.jpg",
+        "addOns": [
+          {
+            "id": 2051,
+            "name": "Ice Cream Scoop",
+            "price": 40
+          },
+          {
+            "id": 2052,
+            "name": "Chocolate Sauce",
+            "price": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Cake King",
+    "rating": "4.8",
+    "deliveryTime": "20 mins",
+    "address": "789 Pine St, City",
+    "image": "/assets/restaurants/cakeking.jpg",
+    "menuItems": [
+      {
+        "id": 301,
+        "name": "Red Velvet Cake",
+        "price": 600,
+        "image": "/assets/menu/cheezzy blust.jpg",
+        "addOns": [
+          {
+            "id": 3011,
+            "name": "Extra Frosting",
+            "price": 50
+          },
+          {
+            "id": 3012,
+            "name": "Chocolate Chips",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "id": 302,
+        "name": "Chocolate Truffle Cake",
+        "price": 550,
+        "image": "/assets/menu/flora.jpg",
+        "addOns": [
+          {
+            "id": 3021,
+            "name": "Chocolate Ganache",
+            "price": 70
+          },
+          {
+            "id": 3022,
+            "name": "Fresh Berries",
+            "price": 80
+          }
+        ]
+      },
+      {
+        "id": 303,
+        "name": "Cheesecake",
+        "price": 450,
+        "image": "/assets/menu/kabab king.jpg",
+        "addOns": [
+          {
+            "id": 3031,
+            "name": "Berry Compote",
+            "price": 60
+          },
+          {
+            "id": 3032,
+            "name": "Caramel Drizzle",
+            "price": 40
+          }
+        ]
+      },
+      {
+        "id": 304,
+        "name": "Blueberry Muffin",
+        "price": 120,
+        "image": "/assets/menu/kabab nations.jpg",
+        "addOns": [
+          {
+            "id": 3041,
+            "name": "Extra Blueberries",
+            "price": 30
+          },
+          {
+            "id": 3042,
+            "name": "Cream Cheese Frosting",
+            "price": 25
+          }
+        ]
+      },
+      {
+        "id": 305,
+        "name": "Chocolate Brownie",
+        "price": 100,
+        "image": "/assets/menu/kusum rolls.jpg",
+        "addOns": [
+          {
+            "id": 3051,
+            "name": "Vanilla Ice Cream",
+            "price": 40
+          },
+          {
+            "id": 3052,
+            "name": "Nuts Topping",
+            "price": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Chef Aladin",
+    "rating": "4.3",
+    "deliveryTime": "35 mins",
+    "address": "101 Maple St, City",
+    "image": "/assets/restaurants/chef aladin.jpg",
+    "menuItems": [
+      {
+        "id": 401,
+        "name": "Chicken Shawarma",
+        "price": 220,
+        "image": "/assets/menu/monginis.jpg",
+        "addOns": [
+          {
+            "id": 4011,
+            "name": "Extra Meat",
+            "price": 50
+          },
+          {
+            "id": 4012,
+            "name": "Cheese",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 402,
+        "name": "Hummus Platter",
+        "price": 180,
+        "image": "/assets/menu/Mumpau.jpg",
+        "addOns": [
+          {
+            "id": 4021,
+            "name": "Extra Pita",
+            "price": 30
+          },
+          {
+            "id": 4022,
+            "name": "Falafel",
+            "price": 40
+          }
+        ]
+      },
+      {
+        "id": 403,
+        "name": "Lamb Kebab",
+        "price": 350,
+        "image": "/assets/menu/new arsalan.jpg",
+        "addOns": [
+          {
+            "id": 4031,
+            "name": "Garlic Sauce",
+            "price": 20
+          },
+          {
+            "id": 4032,
+            "name": "Extra Kebab",
+            "price": 100
+          }
+        ]
+      },
+      {
+        "id": 404,
+        "name": "Falafel Wrap",
+        "price": 200,
+        "image": "/assets/menu/Panjabi dhaba.jpg",
+        "addOns": [
+          {
+            "id": 4041,
+            "name": "Tahini Sauce",
+            "price": 15
+          },
+          {
+            "id": 4042,
+            "name": "Pickles",
+            "price": 10
+          }
+        ]
+      },
+      {
+        "id": 405,
+        "name": "Mint Lemonade",
+        "price": 70,
+        "image": "/assets/menu/Ram dhaba.jpg",
+        "addOns": [
+          {
+            "id": 4051,
+            "name": "Extra Mint",
+            "price": 10
+          },
+          {
+            "id": 4052,
+            "name": "Lemon Slice",
+            "price": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "China Bowl",
+    "rating": "4.6",
+    "deliveryTime": "40 mins",
+    "address": "102 Oak St, City",
+    "image": "/assets/restaurants/chinabowl.jpg",
+    "menuItems": [
+      {
+        "id": 501,
+        "name": "Kung Pao Chicken",
+        "price": 300,
+        "image": "/assets/menu/south vibes.jpg",
+        "addOns": [
+          {
+            "id": 5011,
+            "name": "Extra Spicy",
+            "price": 10
+          },
+          {
+            "id": 5012,
+            "name": "Extra Peanuts",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 502,
+        "name": "Spring Rolls",
+        "price": 150,
+        "image": "/assets/menu/Zumpa pizza.jpg",
+        "addOns": [
+          {
+            "id": 5021,
+            "name": "Sweet Chili Sauce",
+            "price": 15
+          },
+          {
+            "id": 5022,
+            "name": "Extra Roll",
+            "price": 50
+          }
+        ]
+      },
+      {
+        "id": 503,
+        "name": "Fried Rice",
+        "price": 200,
+        "image": "/assets/menu/item1.jpg",
+        "addOns": [
+          {
+            "id": 5031,
+            "name": "Extra Egg",
+            "price": 20
+          },
+          {
+            "id": 5032,
+            "name": "Shrimp",
+            "price": 50
+          }
+        ]
+      },
+      {
+        "id": 504,
+        "name": "Sweet and Sour Pork",
+        "price": 350,
+        "image": "/assets/menu/item2.jpg",
+        "addOns": [
+          {
+            "id": 5041,
+            "name": "Extra Sauce",
+            "price": 20
+          },
+          {
+            "id": 5042,
+            "name": "Pineapple",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 505,
+        "name": "Hot and Sour Soup",
+        "price": 120,
+        "image": "/assets/menu/item3.jpg",
+        "addOns": [
+          {
+            "id": 5051,
+            "name": "Extra Tofu",
+            "price": 20
+          },
+          {
+            "id": 5052,
+            "name": "Extra Spicy",
+            "price": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Gusto Pizza",
+    "rating": "4.7",
+    "deliveryTime": "22 mins",
+    "address": "103 Birch St, City",
+    "image": "/assets/restaurants/gustopizza.jpg",
+    "menuItems": [
+      {
+        "id": 601,
+        "name": "Margherita Pizza",
+        "price": 280,
+        "image": "/assets/menu/item4.jpg",
+        "addOns": [
+          {
+            "id": 6011,
+            "name": "Extra Cheese",
+            "price": 50
+          },
+          {
+            "id": 6012,
+            "name": "Basil Leaves",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 602,
+        "name": "BBQ Chicken Pizza",
+        "price": 350,
+        "image": "/assets/menu/item5.jpg",
+        "addOns": [
+          {
+            "id": 6021,
+            "name": "Extra Chicken",
+            "price": 70
+          },
+          {
+            "id": 6022,
+            "name": "Extra BBQ Sauce",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 603,
+        "name": "Veggie Delight",
+        "price": 320,
+        "image": "/assets/menu/bimal snacks.jpg",
+        "addOns": [
+          {
+            "id": 6031,
+            "name": "Extra Veggies",
+            "price": 40
+          },
+          {
+            "id": 6032,
+            "name": "Jalapenos",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 604,
+        "name": "Stuffed Garlic Bread",
+        "price": 140,
+        "image": "/assets/menu/biryani corner.jpg",
+        "addOns": [
+          {
+            "id": 6041,
+            "name": "Extra Cheese Stuffing",
+            "price": 30
+          },
+          {
+            "id": 6042,
+            "name": "Marinara Sauce",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 605,
+        "name": "Tiramisu",
+        "price": 180,
+        "image": "/assets/menu/Breakfast corner.jpg",
+        "addOns": [
+          {
+            "id": 6051,
+            "name": "Extra Coffee Syrup",
+            "price": 20
+          },
+          {
+            "id": 6052,
+            "name": "Chocolate Shavings",
+            "price": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Hindustan Sweets",
+    "rating": "4.2",
+    "deliveryTime": "33 mins",
+    "address": "104 Cedar St, City",
+    "image": "/assets/restaurants/hindustan sweets.jpg",
+    "menuItems": [
+      {
+        "id": 701,
+        "name": "Gulab Jamun",
+        "price": 80,
+        "image": "/assets/menu/burger queen.jpg",
+        "addOns": [
+          {
+            "id": 7011,
+            "name": "Extra Syrup",
+            "price": 10
+          },
+          {
+            "id": 7012,
+            "name": "Nuts Topping",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 702,
+        "name": "Rasgulla",
+        "price": 70,
+        "image": "/assets/menu/chaoman.jpg",
+        "addOns": [
+          {
+            "id": 7021,
+            "name": "Extra Syrup",
+            "price": 10
+          },
+          {
+            "id": 7022,
+            "name": "Rose Flavor",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 703,
+        "name": "Kaju Barfi",
+        "price": 300,
+        "image": "/assets/menu/cheezzy blust.jpg",
+        "addOns": [
+          {
+            "id": 7031,
+            "name": "Silver Foil",
+            "price": 50
+          },
+          {
+            "id": 7032,
+            "name": "Pistachio Topping",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "id": 704,
+        "name": "Jalebi",
+        "price": 150,
+        "image": "/assets/menu/flora.jpg",
+        "addOns": [
+          {
+            "id": 7041,
+            "name": "Extra Syrup",
+            "price": 20
+          },
+          {
+            "id": 7042,
+            "name": "Rabri",
+            "price": 40
+          }
+        ]
+      },
+      {
+        "id": 705,
+        "name": "Lassi",
+        "price": 100,
+        "image": "/assets/menu/kabab king.jpg",
+        "addOns": [
+          {
+            "id": 7051,
+            "name": "Extra Thick",
+            "price": 20
+          },
+          {
+            "id": 7052,
+            "name": "Rose Flavor",
+            "price": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "KFC",
+    "rating": "4.4",
+    "deliveryTime": "29 mins",
+    "address": "105 Walnut St, City",
+    "image": "/assets/restaurants/kfc.jpg",
+    "menuItems": [
+      {
+        "id": 801,
+        "name": "Zinger Burger",
+        "price": 250,
+        "image": "/assets/menu/kabab nations.jpg",
+        "addOns": [
+          {
+            "id": 8011,
+            "name": "Extra Cheese",
+            "price": 30
+          },
+          {
+            "id": 8012,
+            "name": "Extra Spicy",
+            "price": 10
+          }
+        ]
+      },
+      {
+        "id": 802,
+        "name": "Chicken Popcorn",
+        "price": 180,
+        "image": "/assets/menu/kusum rolls.jpg",
+        "addOns": [
+          {
+            "id": 8021,
+            "name": "Large Size",
+            "price": 50
+          },
+          {
+            "id": 8022,
+            "name": "Extra Dip",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 803,
+        "name": "Hot Wings",
+        "price": 220,
+        "image": "/assets/menu/monginis.jpg",
+        "addOns": [
+          {
+            "id": 8031,
+            "name": "Extra Spicy",
+            "price": 20
+          },
+          {
+            "id": 8032,
+            "name": "Blue Cheese Dip",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "id": 804,
+        "name": "French Fries",
+        "price": 90,
+        "image": "/assets/menu/Mumpau.jpg",
+        "addOns": [
+          {
+            "id": 8041,
+            "name": "Cheese Sauce",
+            "price": 30
+          },
+          {
+            "id": 8042,
+            "name": "Peri Peri Sprinkle",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 805,
+        "name": "Pepsi",
+        "price": 60,
+        "image": "/assets/menu/new arsalan.jpg",
+        "addOns": [
+          {
+            "id": 8051,
+            "name": "Large Size",
+            "price": 20
+          },
+          {
+            "id": 8052,
+            "name": "Extra Ice",
+            "price": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Kulfi House",
+    "rating": "4.1",
+    "deliveryTime": "26 mins",
+    "address": "106 Chestnut St, City",
+    "image": "/assets/restaurants/kulfi.jpg",
+    "menuItems": [
+      {
+        "id": 901,
+        "name": "Mango Kulfi",
+        "price": 80,
+        "image": "/assets/menu/Panjabi dhaba.jpg",
+        "addOns": [
+          {
+            "id": 9011,
+            "name": "Extra Mango Pieces",
+            "price": 20
+          },
+          {
+            "id": 9012,
+            "name": "Nuts Topping",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 902,
+        "name": "Malai Kulfi",
+        "price": 90,
+        "image": "/assets/menu/Ram dhaba.jpg",
+        "addOns": [
+          {
+            "id": 9021,
+            "name": "Rose Syrup",
+            "price": 10
+          },
+          {
+            "id": 9022,
+            "name": "Pistachio Topping",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 903,
+        "name": "Pista Kulfi",
+        "price": 100,
+        "image": "/assets/menu/south vibes.jpg",
+        "addOns": [
+          {
+            "id": 9031,
+            "name": "Extra Pista",
+            "price": 30
+          },
+          {
+            "id": 9032,
+            "name": "Saffron Flavor",
+            "price": 25
+          }
+        ]
+      },
+      {
+        "id": 904,
+        "name": "Rose Falooda",
+        "price": 120,
+        "image": "/assets/menu/Zumpa pizza.jpg",
+        "addOns": [
+          {
+            "id": 9041,
+            "name": "Extra Rose Syrup",
+            "price": 15
+          },
+          {
+            "id": 9042,
+            "name": "Extra Vermicelli",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 905,
+        "name": "Dry Fruit Kulfi",
+        "price": 130,
+        "image": "/assets/menu/item1.jpg",
+        "addOns": [
+          {
+            "id": 9051,
+            "name": "Extra Dry Fruits",
+            "price": 40
+          },
+          {
+            "id": 9052,
+            "name": "Honey Drizzle",
+            "price": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "McDonald's",
+    "rating": "4.9",
+    "deliveryTime": "24 mins",
+    "address": "107 Ash St, City",
+    "image": "/assets/restaurants/mc.jpg",
+    "menuItems": [
+      {
+        "id": 1001,
+        "name": "Big Mac",
+        "price": 270,
+        "image": "/assets/menu/item2.jpg",
+        "addOns": [
+          {
+            "id": 10011,
+            "name": "Extra Patty",
+            "price": 80
+          },
+          {
+            "id": 10012,
+            "name": "Extra Cheese",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "id": 1002,
+        "name": "McChicken",
+        "price": 230,
+        "image": "/assets/menu/item3.jpg",
+        "addOns": [
+          {
+            "id": 10021,
+            "name": "Extra Mayo",
+            "price": 15
+          },
+          {
+            "id": 10022,
+            "name": "Extra Lettuce",
+            "price": 10
+          }
+        ]
+      },
+      {
+        "id": 1003,
+        "name": "McVeggie",
+        "price": 190,
+        "image": "/assets/menu/item4.jpg",
+        "addOns": [
+          {
+            "id": 10031,
+            "name": "Extra Cheese",
+            "price": 30
+          },
+          {
+            "id": 10032,
+            "name": "Jalapenos",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 1004,
+        "name": "French Fries",
+        "price": 100,
+        "image": "/assets/menu/item5.jpg",
+        "addOns": [
+          {
+            "id": 10041,
+            "name": "Large Size",
+            "price": 40
+          },
+          {
+            "id": 10042,
+            "name": "Cheese Sauce",
+            "price": 25
+          }
+        ]
+      },
+      {
+        "id": 1005,
+        "name": "McFlurry",
+        "price": 150,
+        "image": "/assets/menu/bimal snacks.jpg",
+        "addOns": [
+          {
+            "id": 10051,
+            "name": "Extra Oreo",
+            "price": 20
+          },
+          {
+            "id": 10052,
+            "name": "Chocolate Sauce",
+            "price": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Nic",
+    "rating": "4.5",
+    "deliveryTime": "30 mins",
+    "address": "123 Main St, City",
+    "image": "/assets/restaurants/nic.jpg",
+    "menuItems": [
+      {
+        "id": 1101,
+        "name": "Nic Special Burger",
+        "price": 260,
+        "image": "/assets/menu/biryani corner.jpg",
+        "addOns": [
+          {
+            "id": 11011,
+            "name": "Extra Cheese",
+            "price": 30
+          },
+          {
+            "id": 11012,
+            "name": "Bacon",
+            "price": 40
+          }
+        ]
+      },
+      {
+        "id": 1102,
+        "name": "Nic Fries",
+        "price": 130,
+        "image": "/assets/menu/Breakfast corner.jpg",
+        "addOns": [
+          {
+            "id": 11021,
+            "name": "Cheese Sauce",
+            "price": 25
+          },
+          {
+            "id": 11022,
+            "name": "Garlic Mayo",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 1103,
+        "name": "Nic Salad",
+        "price": 150,
+        "image": "/assets/menu/burger queen.jpg",
+        "addOns": [
+          {
+            "id": 11031,
+            "name": "Grilled Chicken",
+            "price": 50
+          },
+          {
+            "id": 11032,
+            "name": "Extra Dressing",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 1104,
+        "name": "Nic Pizza",
+        "price": 320,
+        "image": "/assets/menu/chaoman.jpg",
+        "addOns": [
+          {
+            "id": 11041,
+            "name": "Extra Cheese",
+            "price": 50
+          },
+          {
+            "id": 11042,
+            "name": "Extra Toppings",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "id": 1105,
+        "name": "Nic Smoothie",
+        "price": 180,
+        "image": "/assets/menu/cheezzy blust.jpg",
+        "addOns": [
+          {
+            "id": 11051,
+            "name": "Protein Boost",
+            "price": 30
+          },
+          {
+            "id": 11052,
+            "name": "Extra Fruits",
+            "price": 25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Oudh",
+    "rating": "4.7",
+    "deliveryTime": "32 mins",
+    "address": "124 Pine St, City",
+    "image": "/assets/restaurants/oudh.jpg",
+    "menuItems": [
+      {
+        "id": 1201,
+        "name": "Shawarma",
+        "price": 280,
+        "image": "/assets/menu/flora.jpg",
+        "addOns": [
+          {
+            "id": 12011,
+            "name": "Extra Meat",
+            "price": 60
+          },
+          {
+            "id": 12012,
+            "name": "Cheese",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 1202,
+        "name": "Falafel",
+        "price": 200,
+        "image": "/assets/menu/kabab king.jpg",
+        "addOns": [
+          {
+            "id": 12021,
+            "name": "Tahini Sauce",
+            "price": 15
+          },
+          {
+            "id": 12022,
+            "name": "Extra Pita",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 1203,
+        "name": "Hummus",
+        "price": 150,
+        "image": "/assets/menu/kabab nations.jpg",
+        "addOns": [
+          {
+            "id": 12031,
+            "name": "Extra Olive Oil",
+            "price": 10
+          },
+          {
+            "id": 12032,
+            "name": "Pine Nuts",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "id": 1204,
+        "name": "Baklava",
+        "price": 180,
+        "image": "/assets/menu/kusum rolls.jpg",
+        "addOns": [
+          {
+            "id": 12041,
+            "name": "Extra Syrup",
+            "price": 15
+          },
+          {
+            "id": 12042,
+            "name": "Pistachio Topping",
+            "price": 25
+          }
+        ]
+      },
+      {
+        "id": 1205,
+        "name": "Mint Tea",
+        "price": 90,
+        "image": "/assets/menu/monginis.jpg",
+        "addOns": [
+          {
+            "id": 12051,
+            "name": "Extra Mint",
+            "price": 10
+          },
+          {
+            "id": 12052,
+            "name": "Honey",
+            "price": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Pizza Hut",
+    "rating": "4.8",
+    "deliveryTime": "20 mins",
+    "address": "789 Pine St, City",
+    "image": "/assets/restaurants/pizzahut.jpg",
+    "menuItems": [
+      {
+        "id": 1301,
+        "name": "Pepperoni Pizza",
+        "price": 350,
+        "image": "/assets/menu/Mumpau.jpg",
+        "addOns": [
+          {
+            "id": 13011,
+            "name": "Extra Cheese",
+            "price": 50
+          },
+          {
+            "id": 13012,
+            "name": "Stuffed Crust",
+            "price": 80
+          }
+        ]
+      },
+      {
+        "id": 1302,
+        "name": "Veggie Pizza",
+        "price": 320,
+        "image": "/assets/menu/new arsalan.jpg",
+        "addOns": [
+          {
+            "id": 13021,
+            "name": "Extra Veggies",
+            "price": 40
+          },
+          {
+            "id": 13022,
+            "name": "Cheese Burst",
+            "price": 70
+          }
+        ]
+      },
+      {
+        "id": 1303,
+        "name": "Cheese Pizza",
+        "price": 300,
+        "image": "/assets/menu/Panjabi dhaba.jpg",
+        "addOns": [
+          {
+            "id": 13031,
+            "name": "Extra Cheese",
+            "price": 60
+          },
+          {
+            "id": 13032,
+            "name": "Garlic Crust",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "id": 1304,
+        "name": "Garlic Bread",
+        "price": 120,
+        "image": "/assets/menu/Ram dhaba.jpg",
+        "addOns": [
+          {
+            "id": 13041,
+            "name": "Extra Cheese",
+            "price": 30
+          },
+          {
+            "id": 13042,
+            "name": "Marinara Sauce",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 1305,
+        "name": "Chicken Wings",
+        "price": 180,
+        "image": "/assets/menu/south vibes.jpg",
+        "addOns": [
+          {
+            "id": 13051,
+            "name": "Extra Spicy",
+            "price": 20
+          },
+          {
+            "id": 13052,
+            "name": "Blue Cheese Dip",
+            "price": 25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Subway",
+    "rating": "4.3",
+    "deliveryTime": "35 mins",
+    "address": "101 Maple St, City",
+    "image": "/assets/restaurants/subway.jpg",
+    "menuItems": [
+      {
+        "id": 1401,
+        "name": "Chicken Teriyaki Sub",
+        "price": 250,
+        "image": "/assets/menu/Zumpa pizza.jpg",
+        "addOns": [
+          {
+            "id": 14011,
+            "name": "Extra Cheese",
+            "price": 30
+          },
+          {
+            "id": 14012,
+            "name": "Avocado",
+            "price": 40
+          }
+        ]
+      },
+      {
+        "id": 1402,
+        "name": "Veggie Delite Sub",
+        "price": 200,
+        "image": "/assets/menu/item1.jpg",
+        "addOns": [
+          {
+            "id": 14021,
+            "name": "Extra Veggies",
+            "price": 20
+          },
+          {
+            "id": 14022,
+            "name": "Cheese Slice",
+            "price": 25
+          }
+        ]
+      },
+      {
+        "id": 1403,
+        "name": "Turkey Breast Sub",
+        "price": 270,
+        "image": "/assets/menu/item2.jpg",
+        "addOns": [
+          {
+            "id": 14031,
+            "name": "Bacon",
+            "price": 40
+          },
+          {
+            "id": 14032,
+            "name": "Extra Turkey",
+            "price": 50
+          }
+        ]
+      },
+      {
+        "id": 1404,
+        "name": "Meatball Marinara Sub",
+        "price": 300,
+        "image": "/assets/menu/item3.jpg",
+        "addOns": [
+          {
+            "id": 14041,
+            "name": "Extra Meatballs",
+            "price": 60
+          },
+          {
+            "id": 14042,
+            "name": "Extra Marinara Sauce",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 1405,
+        "name": "Subway Cookies",
+        "price": 80,
+        "image": "/assets/menu/item4.jpg",
+        "addOns": [
+          {
+            "id": 14051,
+            "name": "Extra Cookie",
+            "price": 30
+          },
+          {
+            "id": 14052,
+            "name": "Milk",
+            "price": 40
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Wow Burger",
+    "rating": "4.6",
+    "deliveryTime": "40 mins",
+    "address": "102 Oak St, City",
+    "image": "/assets/restaurants/wowburger.jpg",
+    "menuItems": [
+      {
+        "id": 1501,
+        "name": "Wow Burger",
+        "price": 270,
+        "image": "/assets/menu/item5.jpg",
+        "addOns": [
+          {
+            "id": 15011,
+            "name": "Extra Patty",
+            "price": 80
+          },
+          {
+            "id": 15012,
+            "name": "Cheese Slice",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 1502,
+        "name": "Cheesy Fries",
+        "price": 150,
+        "image": "/assets/menu/bimal snacks.jpg",
+        "addOns": [
+          {
+            "id": 15021,
+            "name": "Extra Cheese",
+            "price": 30
+          },
+          {
+            "id": 15022,
+            "name": "Bacon Bits",
+            "price": 40
+          }
+        ]
+      },
+      {
+        "id": 1503,
+        "name": "Chicken Nuggets",
+        "price": 200,
+        "image": "/assets/menu/biryani corner.jpg",
+        "addOns": [
+          {
+            "id": 15031,
+            "name": "Extra Nuggets",
+            "price": 60
+          },
+          {
+            "id": 15032,
+            "name": "BBQ Sauce",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 1504,
+        "name": "Onion Rings",
+        "price": 120,
+        "image": "/assets/menu/Breakfast corner.jpg",
+        "addOns": [
+          {
+            "id": 15041,
+            "name": "Garlic Mayo",
+            "price": 20
+          },
+          {
+            "id": 15042,
+            "name": "Spicy Dip",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 1505,
+        "name": "Milkshake",
+        "price": 180,
+        "image": "/assets/menu/burger queen.jpg",
+        "addOns": [
+          {
+            "id": 15051,
+            "name": "Whipped Cream",
+            "price": 20
+          },
+          {
+            "id": 15052,
+            "name": "Chocolate Syrup",
+            "price": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Wow Momo",
+    "rating": "4.7",
+    "deliveryTime": "22 mins",
+    "address": "103 Birch St, City",
+    "image": "/assets/restaurants/wowmomo.jpg",
+    "menuItems": [
+      {
+        "id": 1601,
+        "name": "Chicken Momo",
+        "price": 180,
+        "image": "/assets/menu/chaoman.jpg",
+        "addOns": [
+          {
+            "id": 16011,
+            "name": "Extra Spicy",
+            "price": 10
+          },
+          {
+            "id": 16012,
+            "name": "Cheese Dip",
+            "price": 25
+          }
+        ]
+      },
+      {
+        "id": 1602,
+        "name": "Veg Momo",
+        "price": 160,
+        "image": "/assets/menu/cheezzy blust.jpg",
+        "addOns": [
+          {
+            "id": 16021,
+            "name": "Paneer Filling",
+            "price": 30
+          },
+          {
+            "id": 16022,
+            "name": "Schezwan Sauce",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "id": 1603,
+        "name": "Momo Thukpa",
+        "price": 220,
+        "image": "/assets/menu/flora.jpg",
+        "addOns": [
+          {
+            "id": 16031,
+            "name": "Extra Noodles",
+            "price": 40
+          },
+          {
+            "id": 16032,
+            "name": "Extra Momos",
+            "price": 50
+          }
+        ]
+      },
+      {
+        "id": 1604,
+        "name": "Momo Fried Rice",
+        "price": 250,
+        "image": "/assets/menu/kabab king.jpg",
+        "addOns": [
+          {
+            "id": 16041,
+            "name": "Extra Momos",
+            "price": 60
+          },
+          {
+            "id": 16042,
+            "name": "Chili Oil",
+            "price": 20
+          }
+        ]
+      },
+      {
+        "id": 1605,
+        "name": "Momo Soup",
+        "price": 150,
+        "image": "/assets/menu/kabab nations.jpg",
+        "addOns": [
+          {
+            "id": 16051,
+            "name": "Extra Veggies",
+            "price": 30
+          },
+          {
+            "id": 16052,
+            "name": "Extra Momos",
+            "price": 50
+          }
+        ]
+      }
+    ]
+  }
+]

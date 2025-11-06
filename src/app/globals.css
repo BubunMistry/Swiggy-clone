@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-orange {
+    @apply bg-[#ff5200] hover:bg-[#e64900] text-white px-6 py-2 rounded-lg font-semibold transition duration-200;
+  }
+  
+  .btn-orange-outline {
+    @apply border-2 border-[#ff5200] text-[#ff5200] hover:bg-[#ff5200] hover:text-white px-6 py-2 rounded-lg font-semibold transition duration-200;
+  }
+}
+
+
+
+.btn {
+  border: 1.5px solid #ff5200;
+  color: #ff5200;
+  padding: 8px 45px;
+  font-weight: 800;
+}
+
+.btn_fill {
+  border: 1.5px solid #ff5200;
+  color: #ffffff;
+  padding: 8px 45px;
+  font-weight: 800;
+  background-color: #ff5200;
+}
+
+.form-checkbox{
+
+  color: #ff5200 !important;
+
+}
+
+/* globals.css */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.splide__pagination__page {
+  background: #ccc !important;
+  /* other styles */
+}
+
+.splide__pagination__page.is-active {
+  background: #ff9800 !important;
+  /* other styles */
+}
+
+.splide__arrow {
+
+  background: #ff9800 !important;
+
+}
+
+.splide{
+
+  background-color: #fff !important;
+}
+
+
+.menu-page {
+  padding: 20px;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.add-to-cart {
+  background-color: #fc8019;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #d76914;
+}
+
+
+input[type="checkbox" i] {
+  background-color:  #ff5200 !important;
+  cursor: pointer;
+  
+}
+
+
