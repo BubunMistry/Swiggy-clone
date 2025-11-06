@@ -150,6 +150,7 @@ const Profile = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <div className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={profileData.avatar}
                   alt="User Avatar"
@@ -175,6 +176,7 @@ const Profile = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
               <div className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={profileData.avatar}
                   alt="User Avatar"

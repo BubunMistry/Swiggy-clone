@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { FaStar } from 'react-icons/fa'; // Import star icon
 import Link from 'next/link'; // Import Link
+import Image from 'next/image';
 
 const Shopssmall = () => {
   const [sliderItems, setSliderItems] = useState([]);
@@ -47,9 +48,11 @@ const Shopssmall = () => {
               <div className="flex-shrink-0 w-40 h-auto p-2 cursor-pointer group">
                 <div className="bg-white rounded-2xl flex flex-col items-center justify-center overflow-hidden shadow-md hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 border border-gray-100">
                   <div className="relative w-full overflow-hidden">
-                    <img
+                    <Image
                       src={item.image}
                       alt={`Restaurant ${item.name}`}
+                      width={160}
+                      height={112}
                       className="w-full h-28 object-cover mb-2 transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute top-1 right-1 bg-white px-1.5 py-0.5 rounded shadow-sm border border-green-100">

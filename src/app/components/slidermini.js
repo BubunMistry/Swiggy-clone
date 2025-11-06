@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import Link from 'next/link'; // Import Link from Next.js
+import Image from 'next/image';
 
 const SliderMini = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,9 +51,11 @@ const SliderMini = () => {
           <div key={item.id} className="flex-shrink-0 w-36 h-36 p-2"> {/* Adjusted size */}
             <Link href={item.link} passHref>
               <div className="bg-white rounded-lg h-full flex items-center justify-center overflow-hidden cursor-pointer">
-                <img
+                <Image
                   src={item.image}
                   alt={`Food item ${item.id}`}
+                  width={144}
+                  height={144}
                   className="w-full h-full object-cover"
                 />
               </div>

@@ -65,6 +65,7 @@ const Slider = () => {
             {sliderItems.map(item => (
               <li key={item.id} className="splide__slide">
                 <a href={item.link}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={item.image} alt={`Food item ${item.id}`} className="w-full h-auto object-cover" />
                 </a>
               </li>
