@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRestaurants } from "../../hooks/useRestaurants";
 
 const getRestaurantNameFromImage = (imagePath) => {
   const nameWithExtension = imagePath.split("/").pop();
@@ -59,30 +60,12 @@ const RestaurantCard = ({ restaurant }) => {
 };
 
 const OfferPage = () => {
-  const [restaurants, setRestaurants] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from the JSON file
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/data/restaurants.json');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setRestaurants(data.slice(0, 16)); // Ensure we only display up to 16 items
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { restaurants } = useRestaurants();
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4">
-        {restaurants.map((restaurant) => (
+        {restaurants.slice(0, 16).map((restaurant) => (
           <RestaurantCard key={restaurant.id} restaurant={restaurant} />
         ))}
       </div>

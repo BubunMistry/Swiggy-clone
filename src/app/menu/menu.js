@@ -5,6 +5,7 @@ import { MdStar, MdShoppingCart, MdSearch, MdAdd, MdRemove, MdChevronRight, MdCl
 import Link from 'next/link'
 import Image from 'next/image'
 import { useCart } from '../context/CartContext'
+import { getRestaurantByOriginalId } from '../../services/restaurants'
 
 const deals = [
   { id: 1, discount: "10% OFF", code: "USE STEALDEAL" },
@@ -19,11 +20,9 @@ export default function Component() {
   const { cart, customizations, addToCart, removeFromCart, getTotalItems, getTotalPrice } = useCart()
 
   useEffect(() => {
-    fetch('/data/restaurants.json')
-      .then(response => response.json())
+    getRestaurantByOriginalId(1)
       .then(data => {
-        // For this example, we'll use the first restaurant in the array
-        setRestaurant(data[0])
+        setRestaurant(data)
       })
       .catch(error => console.error('Error fetching restaurant data:', error))
   }, [])

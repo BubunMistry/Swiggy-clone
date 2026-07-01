@@ -51,7 +51,7 @@ export default function Navbar() {
                             <Link href="/corporate" className="text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md text-md font-medium flex items-center">
                                 <MdLocationOn className="mr-1" size={20} />
 
-                                Swiggy Corporate
+                                Fuddu Corporate
                             </Link>
                             <div className="relative">
                                 {showSearchInput ? (
@@ -153,7 +153,7 @@ export default function Navbar() {
                         HOME
                     </Link>
                     <Link href="/corporate" className="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">
-                        Swiggy Corporate
+                        Fuddu Corporate
                     </Link>
                     <Link href="/offers" className="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">
                         Offers

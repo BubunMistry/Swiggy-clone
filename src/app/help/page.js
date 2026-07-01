@@ -98,7 +98,7 @@ export default function HelpPage() {
                 <MdEmail className="text-[#00A651]" size={32} />
               </div>
               <h3 className="font-semibold text-lg mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-4">support@swiggy.com</p>
+              <p className="text-gray-600 mb-4">support@fuddudelivery.local</p>
               <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">

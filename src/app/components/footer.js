@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="flex items-center">
             <Image
               src="/assets/logo/swiggy text.svg" // Path to your logo image
-              alt="Swiggy Logo"
+              alt="Fuddu Delivery Logo"
               width={150}
               height={50}
             />
@@ -25,9 +25,9 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white">About</a></li>
               <li><a href="#" className="hover:text-white">Careers</a></li>
               <li><a href="#" className="hover:text-white">Team</a></li>
-              <li><a href="#" className="hover:text-white">Swiggy One</a></li>
-              <li><a href="#" className="hover:text-white">Swiggy Instamart</a></li>
-              <li><a href="#" className="hover:text-white">Swiggy Genie</a></li>
+              <li><a href="#" className="hover:text-white">Fuddu One</a></li>
+              <li><a href="#" className="hover:text-white">Fuddu Quick</a></li>
+              <li><a href="#" className="hover:text-white">Fuddu Genie</a></li>
               <li><a href="#" className="hover:text-white">Contact us</a></li>
             </ul>
           </div>

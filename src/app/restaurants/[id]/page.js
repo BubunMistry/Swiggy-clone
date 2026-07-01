@@ -1,13 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import { MdStar, MdShoppingCart, MdSearch, MdAdd, MdRemove, MdChevronRight, MdClose, MdLocationOn, MdAccessTime, MdLocalOffer } from 'react-icons/md'
 import { FaCircle } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import { useCart } from '../../context/CartContext'
+import { getRestaurantByRouteId } from '../../../services/restaurants'
+import { ListSkeleton, SkeletonBlock } from '../../components/Skeleton'
 
 const deals = [
   { id: 1, discount: "10% OFF", code: "USE STEALDEAL" },
@@ -20,37 +22,55 @@ export const dynamic = 'force-dynamic'
 
 export default function RestaurantPage() {
   const params = useParams()
-  const router = useRouter()
-  const restaurantId = parseInt(params.id)
+  const restaurantId = params.id
   const [restaurant, setRestaurant] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const [popupItem, setPopupItem] = useState(null)
   const [activeTab, setActiveTab] = useState('order')
   const { cart, customizations, addToCart, removeFromCart, getTotalItems, getTotalPrice } = useCart()
 
   useEffect(() => {
-    fetch('/data/restaurants.json')
-      .then(response => response.json())
-      .then(data => {
-        const foundRestaurant = data.find(r => r.id === restaurantId)
+    setLoading(true)
+    setError('')
+    getRestaurantByRouteId(restaurantId)
+      .then(foundRestaurant => {
         if (foundRestaurant) {
           setRestaurant(foundRestaurant)
         } else {
-          router.push('/')
+          setError('Restaurant not found.')
         }
       })
       .catch(error => {
         console.error('Error fetching restaurant data:', error)
-        router.push('/')
+        setError(error.message)
       })
-  }, [restaurantId, router])
+      .finally(() => setLoading(false))
+  }, [restaurantId])
 
-  if (!restaurant) {
+  if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading restaurant...</p>
+      <div className="min-h-screen bg-gray-50">
+        <Navbar />
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          <SkeletonBlock className="h-56 w-full mb-6" />
+          <ListSkeleton count={5} />
+        </div>
+      </div>
+    )
+  }
+
+  if (error || !restaurant) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <Navbar />
+        <div className="max-w-3xl mx-auto px-4 py-16 text-center">
+          <div className="bg-white rounded-lg shadow p-8">
+            <h1 className="text-2xl font-bold text-gray-800 mb-2">Restaurant could not be opened</h1>
+            <p className="text-gray-600 mb-6">{error || 'Try again from the home page.'}</p>
+            <Link href="/" className="btn-orange inline-block">Back to restaurants</Link>
+          </div>
         </div>
       </div>
     )

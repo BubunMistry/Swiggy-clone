@@ -6,6 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import { MdStar, MdLocationOn, MdAccessTime } from 'react-icons/md'
+import { getRestaurants } from '../../services/restaurants'
+import { RestaurantGridSkeleton } from '../components/Skeleton'
 
 function SearchResults() {
   const searchParams = useSearchParams()
@@ -22,8 +24,7 @@ function SearchResults() {
   const performSearch = async (searchQuery) => {
     setIsLoading(true)
     try {
-      const response = await fetch('/data/restaurants.json')
-      const restaurants = await response.json()
+      const restaurants = await getRestaurants()
       
       const searchResults = []
       const queryLower = searchQuery.toLowerCase()
@@ -79,10 +80,7 @@ function SearchResults() {
       </h1>
 
         {isLoading ? (
-          <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
-            <p className="text-gray-600">Searching...</p>
-          </div>
+          <RestaurantGridSkeleton count={6} />
         ) : results.length === 0 && query ? (
           <div className="text-center py-12">
             <p className="text-gray-600 text-lg">No results found for &quot;{query}&quot;</p>

@@ -6,10 +6,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useCart } from '../context/CartContext'
 import { useRouter } from 'next/navigation'
+import { getRestaurantByOriginalId } from '../../services/restaurants'
+import { placeOrder } from '../../services/orders'
+import { useCurrentActor } from '../../hooks/useCurrentActor'
+import { getUserAddresses, normalizeAddress } from '../../services/users'
+import { ListSkeleton } from '../components/Skeleton'
 
 export default function Cart() {
     const router = useRouter()
     const { cart, customizations, restaurant, removeFromCart, updateQuantity, getTotalItems, getTotalPrice, clearCart } = useCart()
+    const { customer } = useCurrentActor()
     const [selectedAddress, setSelectedAddress] = useState(0)
     const [selectedPayment, setSelectedPayment] = useState('')
     const [couponCode, setCouponCode] = useState('')
@@ -18,38 +24,10 @@ export default function Cart() {
     const [suggestions, setSuggestions] = useState('')
     const [noContactDelivery, setNoContactDelivery] = useState(false)
     const [showAddressModal, setShowAddressModal] = useState(false)
-    const [newAddress, setNewAddress] = useState({ type: 'Home', address: '', city: '', pincode: '', phone: '' })
     const [menuItems, setMenuItems] = useState([])
-
-    const addresses = [
-        {
-            id: 1,
-            type: 'Work',
-            name: 'Bubun',
-            address: '123 Tech Park, Sector 5',
-            city: 'Kolkata',
-            pincode: '700091',
-            phone: '+91 9876543210'
-        },
-        {
-            id: 2,
-            type: 'Other',
-            name: 'Bubun',
-            address: '456 Residential Complex, Block A',
-            city: 'Kolkata',
-            pincode: '700092',
-            phone: '+91 9876543210'
-        },
-        {
-            id: 3,
-            type: 'Home',
-            name: 'Bubun',
-            address: '789 Park Street, Near Metro Station',
-            city: 'Kolkata',
-            pincode: '700016',
-            phone: '+91 9876543210'
-        }
-    ]
+    const [addresses, setAddresses] = useState([])
+    const [addressLoading, setAddressLoading] = useState(true)
+    const [addressError, setAddressError] = useState('')
 
     const coupons = [
         { code: 'STEALDEAL', discount: 10, type: 'percent', minOrder: 200 },
@@ -69,17 +47,28 @@ export default function Cart() {
         if (restaurant) {
             setMenuItems(restaurant.menuItems || [])
         } else {
-            // Load restaurant data if not in context
-            fetch('/data/restaurants.json')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.length > 0) {
-                        setMenuItems(data[0].menuItems || [])
-                    }
-                })
+            getRestaurantByOriginalId(1)
+                .then(data => setMenuItems(data?.menuItems || []))
                 .catch(error => console.error('Error fetching restaurant data:', error))
         }
     }, [restaurant])
+
+    useEffect(() => {
+        if (!customer?.id) {
+            setAddresses([])
+            setAddressLoading(false)
+            return
+        }
+        setAddressLoading(true)
+        getUserAddresses(customer.id)
+            .then(rows => {
+                setAddresses(rows.map(row => normalizeAddress(row, customer)).filter(Boolean))
+                setSelectedAddress(0)
+                setAddressError('')
+            })
+            .catch(error => setAddressError(error.message))
+            .finally(() => setAddressLoading(false))
+    }, [customer])
 
     if (getTotalItems() === 0) {
         return (
@@ -129,53 +118,58 @@ export default function Cart() {
         setCouponCode('')
     }
 
-    const handlePlaceOrder = () => {
+    const handlePlaceOrder = async () => {
         if (!selectedPayment) {
             alert('Please select a payment method')
             return
         }
-        // Store order details and redirect to confirmation
-        const orderData = {
-            items: Object.entries(cart).map(([itemId, quantity]) => {
-                const item = menuItems.find(i => i.id === parseInt(itemId))
-                const customizationTotal = customizations[itemId] 
-                    ? Object.entries(customizations[itemId]).reduce((sum, [optionId, isSelected]) => {
-                        if (isSelected) {
-                            const option = item.addOns?.find(opt => opt.id === parseInt(optionId))
-                            return sum + (option?.price || 0)
-                        }
-                        return sum
-                    }, 0)
-                    : 0
-                return {
-                    ...item,
-                    quantity,
-                    customizations: customizations[itemId] || {},
-                    itemTotal: (item.price + customizationTotal) * quantity
-                }
-            }),
-            restaurant: restaurant,
-            address: addresses[selectedAddress],
-            paymentMethod: selectedPayment,
-            total: finalTotal,
-            orderId: `ORD${Date.now()}`,
-            timestamp: new Date().toISOString(),
-            date: new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
-            deliveryDate: new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }),
-            image: restaurant?.image || '/assets/restaurants/burgerking.jpg',
-            location: addresses[selectedAddress]?.city || 'Kolkata'
+        if (!customer?.id) {
+            alert('Please login as a customer before placing an order')
+            return
         }
-        
-        // Save to lastOrder for confirmation page
-        localStorage.setItem('lastOrder', JSON.stringify(orderData))
-        
-        // Save to orders list for profile page
-        const existingOrders = JSON.parse(localStorage.getItem('swiggyOrders') || '[]')
-        const newOrders = [orderData, ...existingOrders]
-        localStorage.setItem('swiggyOrders', JSON.stringify(newOrders))
-        
-        clearCart()
-        router.push('/checkout/confirmation')
+        if (!addresses[selectedAddress]) {
+            alert('Please add a delivery address in Profile before placing an order')
+            return
+        }
+        const items = Object.entries(cart).map(([itemId, quantity]) => {
+            const item = menuItems.find(i => i.id === parseInt(itemId))
+            const customizationTotal = customizations[itemId]
+                ? Object.entries(customizations[itemId]).reduce((sum, [optionId, isSelected]) => {
+                    if (isSelected) {
+                        const option = item.addOns?.find(opt => opt.id === parseInt(optionId))
+                        return sum + (option?.price || 0)
+                    }
+                    return sum
+                }, 0)
+                : 0
+            const selectedAddOns = item.addOns?.filter(addon => customizations[itemId]?.[addon.id]) || []
+            return {
+                ...item,
+                quantity,
+                customizations: customizations[itemId] || {},
+                selectedAddOns,
+                itemTotal: (item.price + customizationTotal) * quantity
+            }
+        })
+
+        try {
+            const orderData = await placeOrder({
+                customerId: customer?.id,
+                restaurant,
+                items,
+                address: addresses[selectedAddress],
+                paymentMethod: selectedPayment,
+                totals: { itemTotal, deliveryFee, gst, platformFee, discount, finalTotal },
+                notes: suggestions,
+            })
+
+            localStorage.setItem('lastOrderId', orderData.id)
+            clearCart()
+            router.push(`/checkout/confirmation?order=${orderData.id}`)
+        } catch (error) {
+            console.error('Error placing order:', error)
+            alert(`Could not place order: ${error.message}`)
+        }
     }
 
     const cartItems = Object.entries(cart).map(([itemId, quantity]) => {
@@ -191,7 +185,7 @@ export default function Cart() {
                     <div className="flex justify-between items-center">
                         <div className="flex items-center">
                             <Link href="/">
-                                <Image src="/assets/logo/swiggy-logo.png" alt="Swiggy" width={120} height={40} className="cursor-pointer" />
+                                <Image src="/assets/logo/swiggy-logo.png" alt="Fuddu Delivery" width={120} height={40} className="cursor-pointer" />
                             </Link>
                             <h1 className="ml-4 text-xl font-bold text-gray-800">Checkout</h1>
                         </div>
@@ -227,6 +221,18 @@ export default function Cart() {
                                     CHANGE
                                 </button>
                             </div>
+                            {addressLoading && <ListSkeleton count={1} />}
+                            {addressError && (
+                                <div className="bg-red-50 border border-red-100 rounded-lg p-4 text-sm text-red-700">
+                                    Address table is not ready. Run the latest supabase/schema.sql in Supabase, then run npm run seed:supabase.
+                                </div>
+                            )}
+                            {!addressLoading && !addressError && !addresses.length && (
+                                <div className="bg-orange-50 border border-orange-100 rounded-lg p-4">
+                                    <p className="text-sm text-gray-700 mb-3">No saved delivery address found for this customer.</p>
+                                    <Link href="/profile" className="btn-orange inline-block">Add address in Profile</Link>
+                                </div>
+                            )}
                             {addresses[selectedAddress] && (
                                 <div className="bg-gray-50 rounded-lg p-4">
                                     <div className="flex items-start justify-between">
@@ -486,7 +492,7 @@ export default function Cart() {
 
                             <button
                                 onClick={handlePlaceOrder}
-                                disabled={!selectedPayment}
+                                disabled={!selectedPayment || !addresses[selectedAddress]}
                                 className={`w-full py-4 rounded-lg font-bold text-white flex items-center justify-center transition ${
                                     selectedPayment
                                         ? 'btn-orange shadow-lg'

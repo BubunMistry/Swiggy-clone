@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import Link from "next/link";
 import Image from "next/image";
+import { useRestaurants } from "../../hooks/useRestaurants";
+import { RestaurantGridSkeleton } from "./Skeleton";
 
 const getRestaurantNameFromImage = (imagePath) => {
     const nameWithExtension = imagePath.split("/").pop();
@@ -62,18 +64,9 @@ const RestaurantCard = ({ restaurant }) => {
 };
 
 const RestaurantSlider = () => {
-    const [restaurants, setRestaurants] = useState([]);
+    const { restaurants, loading, error } = useRestaurants();
     const [currentIndex, setCurrentIndex] = useState(0);
     const itemsToShow = 4;
-
-    useEffect(() => {
-        fetch('/data/restaurants.json')
-            .then(response => response.json())
-            .then(data => {
-                setRestaurants(data);
-            })
-            .catch(error => console.error('Error fetching restaurant data:', error));
-    }, []);
 
     const totalItems = restaurants.length;
     const maxIndex = Math.ceil(totalItems / itemsToShow) - 1;
@@ -99,6 +92,9 @@ const RestaurantSlider = () => {
 
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 hidden lg:block"> {/* Hide on md and below, show on lg and above */}
+            {loading && <RestaurantGridSkeleton count={4} />}
+            {error && <p className="text-red-600 px-4">Could not load restaurants: {error.message}</p>}
+            {!loading && restaurants.length === 0 && !error && <p className="text-gray-500 px-4">No restaurants found. Run npm run seed:supabase.</p>}
             <div {...handlers} className="relative flex items-center">
                 <button
                     onClick={handlePrev}

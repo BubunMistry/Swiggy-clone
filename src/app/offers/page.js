@@ -6,16 +6,11 @@ import Footer from '../components/footer'
 import { MdLocalOffer, MdCheckCircle, MdArrowForward } from 'react-icons/md'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRestaurants } from '../../hooks/useRestaurants'
+import { RestaurantGridSkeleton } from '../components/Skeleton'
 
 export default function OffersPage() {
-  const [restaurants, setRestaurants] = useState([])
-
-  useEffect(() => {
-    fetch('/data/restaurants.json')
-      .then(response => response.json())
-      .then(data => setRestaurants(data))
-      .catch(error => console.error('Error fetching restaurants:', error))
-  }, [])
+  const { restaurants, loading } = useRestaurants()
 
   const offers = [
     {
@@ -108,6 +103,7 @@ export default function OffersPage() {
           {/* Restaurants with Offers */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Restaurants with Special Offers</h2>
+            {loading && <RestaurantGridSkeleton count={6} />}
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {restaurants.slice(0, 12).map((restaurant) => (
                 <Link key={restaurant.id} href={`/restaurants/${restaurant.id}`}>

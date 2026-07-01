@@ -16,7 +16,7 @@ export default function CorporatePage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <MdBusiness className="mx-auto mb-6" size={64} />
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Swiggy Corporate</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Fuddu Corporate</h1>
               <p className="text-xl mb-8">Delicious food delivered to your office, every day</p>
               <button className="btn-orange bg-white text-[#ff5200] hover:bg-gray-100 px-8 py-3 text-lg">
                 Get Started
@@ -61,7 +61,7 @@ export default function CorporatePage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Email Us</h3>
-                  <p className="text-gray-600">corporate@swiggy.com</p>
+                  <p className="text-gray-600">corporate@fuddudelivery.local</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

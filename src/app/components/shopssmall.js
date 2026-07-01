@@ -1,29 +1,16 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { FaStar } from 'react-icons/fa'; // Import star icon
 import Link from 'next/link'; // Import Link
 import Image from 'next/image';
+import { useRestaurants } from '../../hooks/useRestaurants';
+import { SkeletonBlock } from './Skeleton';
 
 const Shopssmall = () => {
-  const [sliderItems, setSliderItems] = useState([]);
+  const { restaurants: sliderItems, loading, error } = useRestaurants();
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    // Fetch data from the JSON file
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/data/restaurants.json');
-        const data = await response.json();
-        setSliderItems(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleSwipe = (event) => {
     const swipeDirection = event.dir;
@@ -41,6 +28,8 @@ const Shopssmall = () => {
 
   return (
     <div className="block lg:hidden" {...handlers}> {/* Show on sm to md, hide on lg and above */}
+      {loading && <div className="px-6 py-3 flex gap-3">{Array.from({ length: 4 }).map((_, index) => <SkeletonBlock key={index} className="h-40 w-40 flex-shrink-0" />)}</div>}
+      {error && <p className="px-6 py-3 text-red-600">Could not load restaurants.</p>}
       <div className="relative flex overflow-x-auto scrollbar-none container mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-nowrap w-full px-5">
           {sliderItems.map((item) => (

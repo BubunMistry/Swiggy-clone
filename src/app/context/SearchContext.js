@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState } from 'react'
+import { getRestaurants } from '../../services/restaurants'
 
 const SearchContext = createContext()
 
@@ -18,8 +19,7 @@ export function SearchProvider({ children }) {
 
     setIsSearching(true)
     try {
-      const response = await fetch('/data/restaurants.json')
-      const restaurants = await response.json()
+      const restaurants = await getRestaurants()
       
       const results = []
       const queryLower = query.toLowerCase()

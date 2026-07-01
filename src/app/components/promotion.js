@@ -9,7 +9,7 @@ export default function Promotion() {
             {/* Text Section */}
             <div className="mb-4 md:mb-0 md:w-1/2">
                 <h2 className="text-center md:text-start text-2xl lg:text-4xl text-gray-700 font-bold mb-2">
-                    For a better experience, <br /> download the Swiggy app now!
+                    For a better experience, <br /> download the Fuddu Delivery app now!
                 </h2>
             </div>
 
